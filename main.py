@@ -1,5 +1,5 @@
 # uvicorn main:app --reload で立ち上げ
-
+    
 from fastapi import FastAPI,Query,Header,Response
 from typing import Annotated
 from pydantic import BaseModel

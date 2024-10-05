@@ -2,12 +2,18 @@ import requests
 import asyncio
 import time
 
+#conoHa用
+BASE_URL = "http://123.45.67.89:8000"
+
+#ローカル用
+#BASE_URL = "http://127.0.0.1:8000"
+
 async def sleep_time(sec):
     loop = asyncio.get_running_loop()
     try:
         res = await loop.run_in_executor(
             None,
-            lambda: requests.get(f"http://127.0.0.1:8000/sleep_time/?sec={sec}", timeout=10)
+            lambda: requests.get(f"{BASE_URL}/sleep_time/?sec={sec}", timeout=10)
         )
         return res.text
     except requests.RequestException as e:
